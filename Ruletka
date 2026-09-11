@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎰 Рулетка</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎰 Рулетка</h1>
+
+        <div class="wheel-container">
+            <div class="wheel" id="wheel">
+                <div class="wheel-center"></div>
+            </div>
+            <div class="pointer">▼</div>
+        </div>
+
+        <div class="result" id="result">Сделайте ставку</div>
+        <div class="balance">Баланс: <span id="balance">1000</span> ₽</div>
+
+        <div class="bets">
+            <button class="bet-btn red" onclick="placeBet('red', 2, event)">Красное (x2)</button>
+            <button class="bet-btn black" onclick="placeBet('black', 2, event)">Чёрное (x2)</button>
+            <button class="bet-btn green" onclick="placeBet('green', 14, event)">Зеро (x14)</button>
+        </div>
+
+        <div class="bet-amount">
+            <label>Ставка:</label>
+            <input type="number" id="betAmount" value="10" min="1">
+        </div>
+
+        <button class="spin-btn" id="spinBtn" onclick="spin()" disabled>ВРАЩАТЬ</button>
+
+        <div class="history">
+            <h3>История:</h3>
+            <div id="history"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
